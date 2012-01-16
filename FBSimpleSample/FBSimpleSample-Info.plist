@@ -27,7 +27,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb328595423827568</string>
+				<string>fbYOUR_APP_ID</string>
 			</array>
 		</dict>
 	</array>

@@ -37,14 +37,22 @@
     [defaults setObject:[facebook accessToken] forKey:@"FBAccessTokenKey"];
     [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
     [defaults synchronize];
-    
-    //	init and create the UIWebView
+    [btnLogin setTitle:@"Logout" forState:UIControlStateNormal];
+    //load up the web view from the like.html file
     [wv loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"like" ofType:@"html"]isDirectory:NO]]];
     [self.view addSubview:wv];
 }
 
+-(void)fbDidLogout{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:nil forKey:@"FBAccessTokenKey"];
+    [defaults setObject:nil forKey:@"FBExpirationDateKey"];
+    [defaults synchronize];
+    [btnLogin setTitle:@"Login" forState:UIControlStateNormal];
+}
+
 -(void)login{
-    facebook = [[Facebook alloc] initWithAppId:@"328595423827568" andDelegate:self];
+    facebook = [[Facebook alloc] initWithAppId:@"YOUR_APP_ID" andDelegate:self];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if([defaults objectForKey:@"FBAccessTokenKey"]
        && [defaults objectForKey:@"FBExpirationDateKey"]){
@@ -55,8 +63,13 @@
     {
         NSArray *permissions = [[NSArray alloc] initWithObjects:@"user_likes", @"user_about_me", nil];
         [facebook authorize:permissions];
+        
+    }
+    else{
+        [facebook logout];
     }
 }
+
 
 - (void)viewDidUnload
 {
