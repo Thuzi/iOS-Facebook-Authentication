@@ -3,12 +3,14 @@
 //  FBSimpleSample
 //
 //  Created by JOEY SCHLUCHTER on 1/16/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 Thuzi, LLC. All rights reserved.
 //
 
 #import "thzViewController.h"
 
 @implementation thzViewController
+
+@synthesize facebook, wv, btnLogin;
 
 - (void)didReceiveMemoryWarning
 {
@@ -22,6 +24,38 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+#pragma mark Facebook req'd && callbacks
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
+    return [facebook handleOpenURL:url];
+}
+
+-(void)fbDidLogin{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:[facebook accessToken] forKey:@"FBAccessTokenKey"];
+    [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
+    [defaults synchronize];
+    
+    //	init and create the UIWebView
+    [wv loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"like" ofType:@"html"]isDirectory:NO]]];
+    [self.view addSubview:wv];
+}
+
+-(void)login{
+    facebook = [[Facebook alloc] initWithAppId:@"328595423827568" andDelegate:self];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if([defaults objectForKey:@"FBAccessTokenKey"]
+       && [defaults objectForKey:@"FBExpirationDateKey"]){
+        facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+    }
+    if (![facebook isSessionValid])
+    {
+        NSArray *permissions = [[NSArray alloc] initWithObjects:@"user_likes", @"user_about_me", nil];
+        [facebook authorize:permissions];
+    }
 }
 
 - (void)viewDidUnload
