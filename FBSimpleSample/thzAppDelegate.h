@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBConnect.h"
 
-@interface thzAppDelegate : UIResponder <UIApplicationDelegate>
+@interface thzAppDelegate : UIResponder <UIApplicationDelegate, FBSessionDelegate> {
+    Facebook *facebook;
+    NSMutableDictionary *userPermissions;
+}
+
 
 @property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) Facebook *facebook;
+
 
 @end

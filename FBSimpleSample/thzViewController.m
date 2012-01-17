@@ -7,10 +7,12 @@
 //
 
 #import "thzViewController.h"
+#import "Facebook.h"
+#import "thzAppDelegate.h"
 
 @implementation thzViewController
 
-@synthesize facebook, wv, btnLogin;
+@synthesize wv, btnLogin;
 
 - (void)didReceiveMemoryWarning
 {
@@ -28,19 +30,14 @@
 
 #pragma mark Facebook req'd && callbacks
 
-- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url{
-    return [facebook handleOpenURL:url];
-}
-
 -(void)fbDidLogin{
+    
+    thzAppDelegate *delegate = (thzAppDelegate *)[[UIApplication sharedApplication] delegate];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:[facebook accessToken] forKey:@"FBAccessTokenKey"];
-    [defaults setObject:[facebook expirationDate] forKey:@"FBExpirationDateKey"];
+    [defaults setObject:[[delegate facebook] accessToken] forKey:@"FBAccessTokenKey"];
+    [defaults setObject:[[delegate facebook] expirationDate] forKey:@"FBExpirationDateKey"];
     [defaults synchronize];
-    [btnLogin setTitle:@"Logout" forState:UIControlStateNormal];
-    //load up the web view from the like.html file
-    [wv loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"like" ofType:@"html"]isDirectory:NO]]];
-    [self.view addSubview:wv];
+    [self reloadWebView];
 }
 
 -(void)fbDidLogout{
@@ -48,28 +45,34 @@
     [defaults setObject:nil forKey:@"FBAccessTokenKey"];
     [defaults setObject:nil forKey:@"FBExpirationDateKey"];
     [defaults synchronize];
-    [btnLogin setTitle:@"Login" forState:UIControlStateNormal];
+    [self reloadWebView];
 }
 
 -(void)login{
-    facebook = [[Facebook alloc] initWithAppId:@"YOUR_APP_ID" andDelegate:self];
+    thzAppDelegate *delegate = (thzAppDelegate *)[[UIApplication sharedApplication] delegate];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if([defaults objectForKey:@"FBAccessTokenKey"]
        && [defaults objectForKey:@"FBExpirationDateKey"]){
-        facebook.accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
-        facebook.expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+        [delegate facebook].accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        [delegate facebook].expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
     }
-    if (![facebook isSessionValid])
+    if (![[delegate facebook] isSessionValid])
     {
         NSArray *permissions = [[NSArray alloc] initWithObjects:@"user_likes", @"user_about_me", nil];
-        [facebook authorize:permissions];
+        [[delegate facebook] authorize:permissions];
+        [btnLogin setTitle:@"Logout" forState:UIControlStateNormal];
         
     }
     else{
-        [facebook logout];
+        [btnLogin setTitle:@"Login" forState:UIControlStateNormal];
+        [[delegate facebook] logout];
     }
 }
 
+-(void)reloadWebView{
+        [wv loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"like" ofType:@"html"]isDirectory:NO]]];
+        [self.view addSubview:wv];
+}
 
 - (void)viewDidUnload
 {
