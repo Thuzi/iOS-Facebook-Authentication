@@ -52,7 +52,7 @@
 }
 
 -(void)login{
-    facebook = [[Facebook alloc] initWithAppId:@"YOUR_APP_ID" andDelegate:self];
+    facebook = [[Facebook alloc] initWithAppId:@"12345" andDelegate:self];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if([defaults objectForKey:@"FBAccessTokenKey"]
        && [defaults objectForKey:@"FBExpirationDateKey"]){
