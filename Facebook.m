@@ -313,9 +313,11 @@ static void *finishedContext = @"finishedContext";
  *            the user has logged in.
  */
 - (void)authorize:(NSArray *)permissions {
-  self.permissions = permissions;
-
-  [self authorizeWithFBAppAuth:NO safariAuth:NO];
+    self.permissions = permissions;
+    //Force the dialog only
+    [self authorizeWithFBAppAuth:NO safariAuth:NO];
+    //SSO with Facebook APP installed
+    //[self authorizeWithFBAppAuth:NO safariAuth:NO];
 }
 
 /**
