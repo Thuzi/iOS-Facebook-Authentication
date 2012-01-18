@@ -9,7 +9,7 @@
 #import "thzAppDelegate.h"
 #import "thzViewController.h"
 
-static NSString* kAppId = @"328595423827568";
+static NSString* kAppId = @"YOUR_APP_ID";
 
 @implementation thzAppDelegate
 @synthesize window = _window;
