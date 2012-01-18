@@ -12,7 +12,7 @@
 
 @implementation thzViewController
 
-@synthesize wv, btnLogin;
+@synthesize btnLogin, btnShowLike, btnHideLike, webView;
 
 - (void)didReceiveMemoryWarning
 {
@@ -25,7 +25,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    thzAppDelegate *delegate = (thzAppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if([defaults objectForKey:@"FBAccessTokenKey"]
+       && [defaults objectForKey:@"FBExpirationDateKey"]){
+        [delegate facebook].accessToken = [defaults objectForKey:@"FBAccessTokenKey"];
+        [delegate facebook].expirationDate = [defaults objectForKey:@"FBExpirationDateKey"];
+    }
+    if (![[delegate facebook] isSessionValid])
+    {
+        [btnLogin setImage:[UIImage imageNamed:@"login.jpg"] forState:UIControlStateNormal];
+        [btnShowLike setHidden:YES];
+        [btnHideLike setHidden:YES];
+    }
+    else{
+        [btnLogin setImage:[UIImage imageNamed:@"logout.jpg"] forState:UIControlStateNormal];
+        [btnShowLike setHidden:NO];
+        [btnHideLike setHidden:YES];
+    }
 }
 
 #pragma mark Facebook req'd && callbacks
@@ -37,7 +54,6 @@
     [defaults setObject:[[delegate facebook] accessToken] forKey:@"FBAccessTokenKey"];
     [defaults setObject:[[delegate facebook] expirationDate] forKey:@"FBExpirationDateKey"];
     [defaults synchronize];
-    [self reloadWebView];
 }
 
 -(void)fbDidLogout{
@@ -45,7 +61,6 @@
     [defaults setObject:nil forKey:@"FBAccessTokenKey"];
     [defaults setObject:nil forKey:@"FBExpirationDateKey"];
     [defaults synchronize];
-    [self reloadWebView];
 }
 
 -(void)login{
@@ -60,19 +75,48 @@
     {
         NSArray *permissions = [[NSArray alloc] initWithObjects:@"user_likes", @"user_about_me", nil];
         [[delegate facebook] authorize:permissions];
-        [btnLogin setTitle:@"Logout" forState:UIControlStateNormal];
-        
+        [btnLogin setImage:[UIImage imageNamed:@"logout.jpg"] forState:UIControlStateNormal];
+        [btnShowLike setHidden:NO];
     }
     else{
-        [btnLogin setTitle:@"Login" forState:UIControlStateNormal];
+        [btnLogin setImage:[UIImage imageNamed:@"login.jpg"] forState:UIControlStateNormal];
+        [btnShowLike setHidden:YES];
         [[delegate facebook] logout];
     }
 }
 
--(void)reloadWebView{
-        [wv loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"like" ofType:@"html"]isDirectory:NO]]];
-        [self.view addSubview:wv];
+-(void)showLike{
+    //UIWebView *webView;
+    
+    webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 80, 320, 300)];
+    webView.autoresizesSubviews = YES;
+    webView.autoresizingMask=(UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth);
+    
+    [webView setDelegate:self];
+    
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"like" ofType:@"html"]isDirectory:NO]]];
+    
+    [self.view addSubview:webView];
+    
+    //[webView release], webView = nil;
+    [btnShowLike setHidden:YES];
+    [btnHideLike setHidden:NO];
 }
+
+-(void)hideLike{
+    [btnHideLike setHidden:YES];
+    [btnShowLike setHidden:NO];
+    [self.webView removeFromSuperview];
+}
+
+-(void)webViewDidStartLoad:(UIWebView *)webView{
+    NSLog(@"loading");
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
+    NSLog(@"load complete");
+}
+
 
 - (void)viewDidUnload
 {

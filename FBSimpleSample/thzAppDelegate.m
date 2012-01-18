@@ -26,11 +26,8 @@ static NSString* kAppId = @"328595423827568";
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     thzViewController *vc = [[thzViewController alloc] init];
-        
     // Initialize Facebook
     facebook = [[Facebook alloc] initWithAppId:kAppId andDelegate:vc];
-    //self.window.rootViewController = vc;
-    //[vc release];
     // Override point for customization after application launch.
     return YES;
 }
@@ -64,6 +61,7 @@ static NSString* kAppId = @"328595423827568";
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     return [self.facebook handleOpenURL:url];
 }
+
 
 
 @end

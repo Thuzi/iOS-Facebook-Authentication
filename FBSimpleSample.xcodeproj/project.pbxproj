@@ -27,6 +27,11 @@
 		37F8E95B14C490C2008FFEF9 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F8E95414C490C2008FFEF9 /* SBJsonParser.m */; };
 		37F8E95C14C490C2008FFEF9 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F8E95614C490C2008FFEF9 /* SBJsonWriter.m */; };
 		37F8E95E14C4AF83008FFEF9 /* like.html in Resources */ = {isa = PBXBuildFile; fileRef = 37F8E95D14C4AF83008FFEF9 /* like.html */; };
+		37F8E98114C68FCA008FFEF9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F8E98014C68FCA008FFEF9 /* Icon.png */; };
+		37F8E98414C691B4008FFEF9 /* login.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37F8E98214C691B4008FFEF9 /* login.jpg */; };
+		37F8E98514C691B4008FFEF9 /* logout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37F8E98314C691B4008FFEF9 /* logout.jpg */; };
+		37F8E98814C694E6008FFEF9 /* hidelike.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37F8E98614C694E6008FFEF9 /* hidelike.jpg */; };
+		37F8E98914C694E6008FFEF9 /* showlike.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37F8E98714C694E6008FFEF9 /* showlike.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +72,11 @@
 		37F8E95514C490C2008FFEF9 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		37F8E95614C490C2008FFEF9 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		37F8E95D14C4AF83008FFEF9 /* like.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = like.html; sourceTree = "<group>"; };
+		37F8E98014C68FCA008FFEF9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		37F8E98214C691B4008FFEF9 /* login.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login.jpg; sourceTree = "<group>"; };
+		37F8E98314C691B4008FFEF9 /* logout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logout.jpg; sourceTree = "<group>"; };
+		37F8E98614C694E6008FFEF9 /* hidelike.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hidelike.jpg; sourceTree = "<group>"; };
+		37F8E98714C694E6008FFEF9 /* showlike.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = showlike.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +138,13 @@
 		37F8E90814C48E72008FFEF9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				37F8E98614C694E6008FFEF9 /* hidelike.jpg */,
+				37F8E98714C694E6008FFEF9 /* showlike.jpg */,
+				37F8E98214C691B4008FFEF9 /* login.jpg */,
+				37F8E98314C691B4008FFEF9 /* logout.jpg */,
 				37F8E90914C48E72008FFEF9 /* FBSimpleSample-Info.plist */,
 				37F8E90A14C48E72008FFEF9 /* InfoPlist.strings */,
+				37F8E98014C68FCA008FFEF9 /* Icon.png */,
 				37F8E90D14C48E72008FFEF9 /* main.m */,
 				37F8E90F14C48E72008FFEF9 /* FBSimpleSample-Prefix.pch */,
 			);
@@ -220,6 +235,11 @@
 				37F8E91514C48E72008FFEF9 /* MainStoryboard.storyboard in Resources */,
 				37F8E94614C490B5008FFEF9 /* FBDialog.bundle in Resources */,
 				37F8E95E14C4AF83008FFEF9 /* like.html in Resources */,
+				37F8E98114C68FCA008FFEF9 /* Icon.png in Resources */,
+				37F8E98414C691B4008FFEF9 /* login.jpg in Resources */,
+				37F8E98514C691B4008FFEF9 /* logout.jpg in Resources */,
+				37F8E98814C694E6008FFEF9 /* hidelike.jpg in Resources */,
+				37F8E98914C694E6008FFEF9 /* showlike.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

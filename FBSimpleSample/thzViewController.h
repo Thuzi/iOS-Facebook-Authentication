@@ -9,11 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "FBConnect.h"
 
-@interface thzViewController : UIViewController <UIWebViewDelegate, FBSessionDelegate>
+@interface thzViewController : UIViewController <UIWebViewDelegate, FBSessionDelegate>{
+    UIWebView *webView;
+}
 @property (nonatomic,retain) IBOutlet UIButton *btnLogin;
-@property (nonatomic,retain) IBOutlet UIWebView *wv;
-
+@property (nonatomic,retain) IBOutlet UIButton *btnShowLike;
+@property (nonatomic,retain) IBOutlet UIButton *btnHideLike;
+@property (nonatomic,retain) UIWebView *webView;
 
 -(IBAction)login;
--(IBAction)reloadWebView;
+-(IBAction)showLike;
+-(IBAction)hideLike;
 @end
