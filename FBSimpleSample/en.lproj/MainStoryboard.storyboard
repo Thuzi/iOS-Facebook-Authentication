@@ -13,11 +13,11 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h3e-jB-6Vb">
-                                <rect key="frame" x="20" y="20" width="100" height="37"/>
+                            <button opaque="NO" contentMode="top" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h3e-jB-6Vb">
+                                <rect key="frame" x="8" y="10" width="155" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="login.jpg">
+                                <state key="normal" image="fbLogin.jpg">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -29,10 +29,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="C9J-Jl-Tbb">
-                                <rect key="frame" x="201" y="20" width="99" height="37"/>
+                                <rect key="frame" x="180" y="10" width="132" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="showlike.jpg">
+                                <state key="normal" image="fbShow.jpg">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -44,10 +44,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vcN-tE-Ex2">
-                                <rect key="frame" x="201" y="20" width="99" height="37"/>
+                                <rect key="frame" x="180" y="10" width="132" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" image="hidelike.jpg">
+                                <state key="normal" image="fbHide.jpg">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -71,9 +71,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="hidelike.jpg" width="66" height="23"/>
-        <image name="login.jpg" width="66" height="23"/>
-        <image name="showlike.jpg" width="66" height="23"/>
+        <image name="fbHide.jpg" width="132" height="46"/>
+        <image name="fbLogin.jpg" width="155" height="46"/>
+        <image name="fbShow.jpg" width="132" height="46"/>
     </resources>
     <classes>
         <class className="thzViewController" superclassName="UIViewController">

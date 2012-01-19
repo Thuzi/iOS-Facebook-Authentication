@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		378C46F714C87C7200BA072B /* fbHide.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 378C46F314C87C7200BA072B /* fbHide.jpg */; };
+		378C46F814C87C7200BA072B /* fbLogin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 378C46F414C87C7200BA072B /* fbLogin.jpg */; };
+		378C46F914C87C7200BA072B /* fbLogOut.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 378C46F514C87C7200BA072B /* fbLogOut.jpg */; };
+		378C46FA14C87C7200BA072B /* fbShow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 378C46F614C87C7200BA072B /* fbShow.jpg */; };
+		378C46FD14C87E6400BA072B /* Thuzi57.png in Resources */ = {isa = PBXBuildFile; fileRef = 378C46FC14C87E6400BA072B /* Thuzi57.png */; };
 		37F8E90214C48E72008FFEF9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F8E90114C48E72008FFEF9 /* UIKit.framework */; };
 		37F8E90414C48E72008FFEF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F8E90314C48E72008FFEF9 /* Foundation.framework */; };
 		37F8E90614C48E72008FFEF9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37F8E90514C48E72008FFEF9 /* CoreGraphics.framework */; };
@@ -35,6 +40,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		378C46F314C87C7200BA072B /* fbHide.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fbHide.jpg; sourceTree = "<group>"; };
+		378C46F414C87C7200BA072B /* fbLogin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fbLogin.jpg; sourceTree = "<group>"; };
+		378C46F514C87C7200BA072B /* fbLogOut.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fbLogOut.jpg; sourceTree = "<group>"; };
+		378C46F614C87C7200BA072B /* fbShow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fbShow.jpg; sourceTree = "<group>"; };
+		378C46FC14C87E6400BA072B /* Thuzi57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Thuzi57.png; sourceTree = "<group>"; };
 		37F8E8FD14C48E72008FFEF9 /* FBSimpleSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBSimpleSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37F8E90114C48E72008FFEF9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		37F8E90314C48E72008FFEF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -138,6 +148,11 @@
 		37F8E90814C48E72008FFEF9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				378C46FC14C87E6400BA072B /* Thuzi57.png */,
+				378C46F314C87C7200BA072B /* fbHide.jpg */,
+				378C46F414C87C7200BA072B /* fbLogin.jpg */,
+				378C46F514C87C7200BA072B /* fbLogOut.jpg */,
+				378C46F614C87C7200BA072B /* fbShow.jpg */,
 				37F8E98614C694E6008FFEF9 /* hidelike.jpg */,
 				37F8E98714C694E6008FFEF9 /* showlike.jpg */,
 				37F8E98214C691B4008FFEF9 /* login.jpg */,
@@ -240,6 +255,11 @@
 				37F8E98514C691B4008FFEF9 /* logout.jpg in Resources */,
 				37F8E98814C694E6008FFEF9 /* hidelike.jpg in Resources */,
 				37F8E98914C694E6008FFEF9 /* showlike.jpg in Resources */,
+				378C46F714C87C7200BA072B /* fbHide.jpg in Resources */,
+				378C46F814C87C7200BA072B /* fbLogin.jpg in Resources */,
+				378C46F914C87C7200BA072B /* fbLogOut.jpg in Resources */,
+				378C46FA14C87C7200BA072B /* fbShow.jpg in Resources */,
+				378C46FD14C87E6400BA072B /* Thuzi57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

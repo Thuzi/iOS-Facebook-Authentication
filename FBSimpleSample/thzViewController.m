@@ -34,12 +34,12 @@
     }
     if (![[delegate facebook] isSessionValid])
     {
-        [btnLogin setImage:[UIImage imageNamed:@"login.jpg"] forState:UIControlStateNormal];
+        [btnLogin setImage:[UIImage imageNamed:@"fbLogin.jpg"] forState:UIControlStateNormal];
         [btnShowLike setHidden:YES];
         [btnHideLike setHidden:YES];
     }
     else{
-        [btnLogin setImage:[UIImage imageNamed:@"logout.jpg"] forState:UIControlStateNormal];
+        [btnLogin setImage:[UIImage imageNamed:@"fbLogOut.jpg"] forState:UIControlStateNormal];
         [btnShowLike setHidden:NO];
         [btnHideLike setHidden:YES];
     }
@@ -75,11 +75,11 @@
     {
         NSArray *permissions = [[NSArray alloc] initWithObjects:@"user_likes", @"user_about_me", nil];
         [[delegate facebook] authorize:permissions];
-        [btnLogin setImage:[UIImage imageNamed:@"logout.jpg"] forState:UIControlStateNormal];
+        [btnLogin setImage:[UIImage imageNamed:@"fbLogOut.jpg"] forState:UIControlStateNormal];
         [btnShowLike setHidden:NO];
     }
     else{
-        [btnLogin setImage:[UIImage imageNamed:@"login.jpg"] forState:UIControlStateNormal];
+        [btnLogin setImage:[UIImage imageNamed:@"fbLogin.jpg"] forState:UIControlStateNormal];
         [btnShowLike setHidden:YES];
         [[delegate facebook] logout];
     }
