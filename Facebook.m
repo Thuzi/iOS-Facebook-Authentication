@@ -317,7 +317,7 @@ static void *finishedContext = @"finishedContext";
     //Force the dialog only
     //[self authorizeWithFBAppAuth:NO safariAuth:NO];
     //SSO with Facebook APP installed
-    [self authorizeWithFBAppAuth:YES safariAuth:NO];
+    [self authorizeWithFBAppAuth:YES safariAuth:YES];
 }
 
 /**

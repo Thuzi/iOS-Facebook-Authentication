@@ -37,6 +37,7 @@
 		37F8E98514C691B4008FFEF9 /* logout.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37F8E98314C691B4008FFEF9 /* logout.jpg */; };
 		37F8E98814C694E6008FFEF9 /* hidelike.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37F8E98614C694E6008FFEF9 /* hidelike.jpg */; };
 		37F8E98914C694E6008FFEF9 /* showlike.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37F8E98714C694E6008FFEF9 /* showlike.jpg */; };
+		38E2D94614C9F9C80046418C /* myFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E2D94514C9F9C80046418C /* myFacebook.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,8 @@
 		37F8E98314C691B4008FFEF9 /* logout.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logout.jpg; sourceTree = "<group>"; };
 		37F8E98614C694E6008FFEF9 /* hidelike.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hidelike.jpg; sourceTree = "<group>"; };
 		37F8E98714C694E6008FFEF9 /* showlike.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = showlike.jpg; sourceTree = "<group>"; };
+		38E2D94414C9F9C80046418C /* myFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myFacebook.h; sourceTree = "<group>"; };
+		38E2D94514C9F9C80046418C /* myFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myFacebook.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				37F8E91614C48E72008FFEF9 /* thzViewController.h */,
 				37F8E91714C48E72008FFEF9 /* thzViewController.m */,
 				37F8E90814C48E72008FFEF9 /* Supporting Files */,
+				38E2D94414C9F9C80046418C /* myFacebook.h */,
+				38E2D94514C9F9C80046418C /* myFacebook.m */,
 			);
 			path = FBSimpleSample;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				37F8E95A14C490C2008FFEF9 /* SBJsonBase.m in Sources */,
 				37F8E95B14C490C2008FFEF9 /* SBJsonParser.m in Sources */,
 				37F8E95C14C490C2008FFEF9 /* SBJsonWriter.m in Sources */,
+				38E2D94614C9F9C80046418C /* myFacebook.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -74,7 +74,8 @@
     if (![[delegate facebook] isSessionValid])
     {
         NSArray *permissions = [[NSArray alloc] initWithObjects:@"user_likes", @"user_about_me", nil];
-        [[delegate facebook] authorize:permissions];
+        // [[delegate facebook] authorize:permissions];
+        [[delegate facebook] myAuthorize:permissions];
         [btnLogin setImage:[UIImage imageNamed:@"fbLogOut.jpg"] forState:UIControlStateNormal];
         [btnShowLike setHidden:NO];
     }
