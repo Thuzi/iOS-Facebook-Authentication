@@ -1,4 +1,0 @@
-Sample shows how to use SSO with Facebook as well as Web Authentication.  You want to use Web Authentication when using plug-ins such as like, send, comments, etc.
-    
-Dependencies
-https://github.com/facebook/facebook-ios-sdk
