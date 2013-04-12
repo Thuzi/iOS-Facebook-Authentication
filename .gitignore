@@ -20,3 +20,5 @@ xcuserdata
 
 # AppCode ignore
 .idea/
+
+dist/*
